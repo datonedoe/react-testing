@@ -22,7 +22,7 @@ export class App extends Component {
           this.props.categories.map(category => {
             return (
               <div key={category.id}>
-                <Link 
+                <Link
                   to='/category'
                   onClick={() => this.props.pickCategory(category)}
                 >

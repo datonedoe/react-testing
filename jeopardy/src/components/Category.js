@@ -22,31 +22,32 @@ export class Category extends Component {
     return (
       <div>
         <h2>{this.props.category.title}</h2>
-        {
-          this.state.clues.map(clue => {
-            return (
-              <Clue key={clue.id} clue={clue} />
-            )
-          })
-        }
+        {this.state.clues.map(clue => {
+          return <Clue key={clue.id} clue={clue} />;
+        })}
       </div>
-    )
+    );
   }
 }
 
-export class LinkedCategory extends Component {
+class LinkedCategory extends Component {
   render() {
     return (
       <div>
-        <Link className='link-home' to='/'><h4>Home</h4></Link>
+        <Link className="link-home" to="/">
+          <h4>Home</h4>
+        </Link>
         <Category category={this.props.category} />
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
-  return { category: state.category }
+  return { category: state.category };
 }
 
-export default connect(mapStateToProps, null)(LinkedCategory);
+export default connect(
+  mapStateToProps,
+  null
+)(LinkedCategory);
