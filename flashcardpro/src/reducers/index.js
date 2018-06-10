@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { SET_STACK, LOAD_STACKS, ADD_STACK } from '../actions';
 
-function stack(state = {}, action) {
+export function stack(state = {}, action) {
   switch (action.type) {
     case SET_STACK:
       return action.stack;
@@ -10,7 +10,7 @@ function stack(state = {}, action) {
   }
 }
 
-function stacks(state = [], action) {
+export function stacks(state = [], action) {
   switch(action.type) {
     case LOAD_STACKS:
       return action.stacks;
